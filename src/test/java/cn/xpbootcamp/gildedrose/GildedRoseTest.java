@@ -27,5 +27,13 @@ public class GildedRoseTest {
             assertThat(product.getSellIn(), equalTo(-2));
             assertThat(product.getQuality(), equalTo(6));
         }
+
+        @Test
+        void given_FarOverSellIn_when_passDays_then_qualityToBe0() {
+            Product product = new Product(1,30,40);
+            product.passDays(200);
+            assertThat(product.getSellIn(), equalTo(-170));
+            assertThat(product.getQuality(), equalTo(0));
+        }
     }
 }
