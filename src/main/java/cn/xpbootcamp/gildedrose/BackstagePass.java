@@ -23,8 +23,13 @@ public class BackstagePass {
     }
 
     public void passDays(int passDays) {
-        this.quality += passDays* this.initialQualityGoUpSpeed;
-
-        this.sellIn -= passDays;
+        for (int i = passDays; i > 0; i--) {
+            this.sellIn -= 1;
+            if (this.sellIn >= 10) {
+                this.quality += this.initialQualityGoUpSpeed;
+            } else {
+                this.quality += 2 * this.initialQualityGoUpSpeed;
+            }
+        }
     }
 }
