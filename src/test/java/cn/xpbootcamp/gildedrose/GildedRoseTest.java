@@ -86,6 +86,14 @@ public class GildedRoseTest {
                 assertThat(backstagePass.getSellIn(), equalTo(9));
                 assertThat(backstagePass.getQuality(), equalTo(24));
             }
+
+            @Test
+            void given_SellInLt5Ge0_when_passDays_then_qualityGoUp3PerDay() {
+                BackstagePass backstagePass = new BackstagePass(1, 12, 20);
+                backstagePass.passDays(8);
+                assertThat(backstagePass.getSellIn(), equalTo(4));
+                assertThat(backstagePass.getQuality(), equalTo(35));
+            }
         }
     }
 }
