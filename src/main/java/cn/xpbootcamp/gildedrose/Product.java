@@ -2,12 +2,12 @@ package cn.xpbootcamp.gildedrose;
 
 public class Product {
 
-    private int initialQualityGoDownSpeed;
+    private int initialQualitySpeed;
     private int sellIn;
     private int quality;
 
-    public Product(int initialQualityGoDownSpeed, int sellIn, int quality) {
-        this.initialQualityGoDownSpeed = initialQualityGoDownSpeed;
+    public Product(int initialQualitySpeed, int sellIn, int quality) {
+        this.initialQualitySpeed = initialQualitySpeed;
         this.sellIn = sellIn;
         this.quality = quality;
     }
@@ -21,9 +21,9 @@ public class Product {
     }
 
     private void passDaysGtSellIn(int passDays) {
-        this.quality -= initialQualityGoDownSpeed * this.sellIn;
+        this.quality += initialQualitySpeed * this.sellIn;
         int overSellInDays = passDays - this.sellIn;
-        this.quality -= initialQualityGoDownSpeed * 2 * overSellInDays;
+        this.quality += initialQualitySpeed * 2 * overSellInDays;
         if (this.quality < 0) {
             this.quality = 0;
         }
@@ -32,7 +32,7 @@ public class Product {
     }
 
     private void passDaysLtSellIn(int passDays) {
-        this.quality -= initialQualityGoDownSpeed * passDays;
+        this.quality += initialQualitySpeed * passDays;
         if (this.quality < 0) {
             this.quality = 0;
         }
