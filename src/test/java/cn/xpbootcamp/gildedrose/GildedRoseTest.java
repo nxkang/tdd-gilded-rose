@@ -56,5 +56,16 @@ public class GildedRoseTest {
                 assertThat(agedBrie.getQuality(), equalTo(50));
             }
         }
+
+        @Nested
+        class SulfurasTest {
+
+            @Test
+            void given_pass_any_days_when_passDays_then_qualityFixed() {
+                Sulfuras sulfuras = new Sulfuras(40);
+                sulfuras.passDays(200);
+                assertThat(sulfuras.getQuality(), equalTo(40));
+            }
+        }
     }
 }
