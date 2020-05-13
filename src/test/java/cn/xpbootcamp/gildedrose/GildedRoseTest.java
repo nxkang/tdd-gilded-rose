@@ -56,5 +56,52 @@ public class GildedRoseTest {
                 assertThat(agedBrie.getQuality(), equalTo(50));
             }
         }
+
+        @Nested
+        class SulfurasTest {
+
+            @Test
+            void given_pass_any_days_when_passDays_then_qualityFixed() {
+                Sulfuras sulfuras = new Sulfuras(40);
+                sulfuras.passDays(200);
+                assertThat(sulfuras.getQuality(), equalTo(40));
+            }
+        }
+
+        @Nested
+        class BackstagePassTest {
+
+            @Test
+            void given_SellInGe10_when_passDays_then_qualityGoUp1PerDay() {
+                BackstagePass backstagePass = new BackstagePass(1, 12, 20);
+                backstagePass.passDays(1);
+                assertThat(backstagePass.getSellIn(), equalTo(11));
+                assertThat(backstagePass.getQuality(), equalTo(21));
+            }
+
+            @Test
+            void given_SellInLt10Ge5_when_passDays_then_qualityGoUp2PerDay() {
+                BackstagePass backstagePass = new BackstagePass(1, 12, 20);
+                backstagePass.passDays(3);
+                assertThat(backstagePass.getSellIn(), equalTo(9));
+                assertThat(backstagePass.getQuality(), equalTo(24));
+            }
+
+            @Test
+            void given_SellInLt5Ge0_when_passDays_then_qualityGoUp3PerDay() {
+                BackstagePass backstagePass = new BackstagePass(1, 12, 20);
+                backstagePass.passDays(8);
+                assertThat(backstagePass.getSellIn(), equalTo(4));
+                assertThat(backstagePass.getQuality(), equalTo(35));
+            }
+
+            @Test
+            void given_OverSellIn_when_passDays_then_qualityToBe0() {
+                BackstagePass backstagePass = new BackstagePass(1, 12, 20);
+                backstagePass.passDays(13);
+                assertThat(backstagePass.getSellIn(), equalTo(-1));
+                assertThat(backstagePass.getQuality(), equalTo(0));
+            }
+        }
     }
 }
