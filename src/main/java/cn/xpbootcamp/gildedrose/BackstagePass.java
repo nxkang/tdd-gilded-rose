@@ -29,8 +29,10 @@ public class BackstagePass {
                 this.quality += this.initialQualityGoUpSpeed;
             } else if (this.sellIn >= 5) {
                 this.quality += 2 * this.initialQualityGoUpSpeed;
-            } else {
+            } else if (this.sellIn >=0) {
                 this.quality += 3 * this.initialQualityGoUpSpeed;
+            } else {
+                this.quality = 0;
             }
         }
     }

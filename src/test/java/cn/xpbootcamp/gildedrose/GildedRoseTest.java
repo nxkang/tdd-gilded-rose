@@ -94,6 +94,14 @@ public class GildedRoseTest {
                 assertThat(backstagePass.getSellIn(), equalTo(4));
                 assertThat(backstagePass.getQuality(), equalTo(35));
             }
+
+            @Test
+            void given_OverSellIn_when_passDays_then_qualityToBe0() {
+                BackstagePass backstagePass = new BackstagePass(1, 12, 20);
+                backstagePass.passDays(13);
+                assertThat(backstagePass.getSellIn(), equalTo(-1));
+                assertThat(backstagePass.getQuality(), equalTo(0));
+            }
         }
     }
 }
