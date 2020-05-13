@@ -36,7 +36,7 @@
 
 5. Given 萨弗拉斯， SellIn为30， 价值为40， 过了200天， When 计算价值， Then SellIn为-170， 价值为40
 
-6. Given 后台门票, 初始上涨速度为1/天， SellIn为12，价值为20， 过了1天， When 计算价值, Then SellIn 为29， 价值为21
+6. Given 后台门票, 初始上涨速度为1/天， SellIn为12，价值为20， 过了1天， When 计算价值, Then SellIn 为11， 价值为21
 7. Given 后台门票, 初始上涨速度为1/天, SellIn为12,  价值为20， 过了3天, When 计算价值， Then SellIn 为 9， 价值为 24
 8. Given 后台门票, 初始上涨速度为1/天, SellIn为12,  价值为20， 过了8天, When 计算价值， Then SellIn 为 4， 价值为 35
 9. Given 后台门票, 初始上涨速度为1/天, SellIn为12,  价值为20， 过了13天, When 计算价值， Then SellIn 为 -1, 价值为 0

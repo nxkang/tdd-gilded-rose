@@ -67,5 +67,17 @@ public class GildedRoseTest {
                 assertThat(sulfuras.getQuality(), equalTo(40));
             }
         }
+
+        @Nested
+        class BackstagePassTest {
+
+            @Test
+            void given_SellInGe10_when_passDays_then_qualityGoUp1PerDay() {
+                BackstagePass backstagePass = new BackstagePass(1, 12, 20);
+                backstagePass.passDays(1);
+                assertThat(backstagePass.getSellIn(), equalTo(11));
+                assertThat(backstagePass.getQuality(), equalTo(21));
+            }
+        }
     }
 }
