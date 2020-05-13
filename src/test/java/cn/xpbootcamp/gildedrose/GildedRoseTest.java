@@ -19,5 +19,13 @@ public class GildedRoseTest {
             assertThat(product.getSellIn(), equalTo(29));
             assertThat(product.getQuality(), equalTo(39));
         }
+
+        @Test
+        void given_OverSellIn_when_passDays_then_qualityGoDown2PerPay() {
+            Product product = new Product(1,30,40);
+            product.passDays(32);
+            assertThat(product.getSellIn(), equalTo(-2));
+            assertThat(product.getQuality(), equalTo(6));
+        }
     }
 }

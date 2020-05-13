@@ -13,8 +13,17 @@ public class Product {
     }
 
     public void passDays(int passDays) {
+
+        if (passDays <= this.sellIn) {
+            this.quality -= initialQualityGoDownSpeed * passDays;
+            this.sellIn -= passDays;
+            return;
+        }
+
+        this.quality -= initialQualityGoDownSpeed * this.sellIn;
+        int overSellInDays = passDays - this.sellIn;
+        this.quality -= initialQualityGoDownSpeed * 2 * overSellInDays;
         this.sellIn -= passDays;
-        this.quality -= initialQualityGoDownSpeed * passDays;
     }
 
     public int getSellIn() {
