@@ -79,7 +79,7 @@ public class GildedRoseTest {
             @Test
             void given_pass_any_days_when_passDays_then_qualityFixed() {
                 Sulfuras sulfuras = new Sulfuras(40);
-                sulfuras.passDays(200);
+                sulfuras.passDays(1);
                 assertThat(sulfuras.getQuality(), equalTo(40));
             }
         }
