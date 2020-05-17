@@ -2,10 +2,8 @@ package cn.xpbootcamp.gildedrose;
 
 public class BackstagePass {
 
-    private int initialQualityGoUpSpeed;
-
+    private final int initialQualityGoUpSpeed;
     private int sellIn;
-
     private int quality;
 
     public BackstagePass(int initialQualityGoUpSpeed, int sellIn, int quality) {

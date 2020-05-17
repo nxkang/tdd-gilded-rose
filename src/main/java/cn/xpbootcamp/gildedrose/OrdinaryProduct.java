@@ -2,7 +2,7 @@ package cn.xpbootcamp.gildedrose;
 
 public class OrdinaryProduct {
 
-    private int initialQualityGoDownSpeed;
+    private final int initialQualityGoDownSpeed;
     private int sellIn;
     private int quality;
 

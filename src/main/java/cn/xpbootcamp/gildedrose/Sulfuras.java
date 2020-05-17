@@ -2,7 +2,7 @@ package cn.xpbootcamp.gildedrose;
 
 public class Sulfuras {
 
-    private int quality;
+    private final int quality;
 
     public Sulfuras(int quality) {
         this.quality = quality;

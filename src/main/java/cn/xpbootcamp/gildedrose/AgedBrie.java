@@ -2,7 +2,7 @@ package cn.xpbootcamp.gildedrose;
 
 public class AgedBrie {
 
-    private int qualityGoUpSpeed;
+    private final int qualityGoUpSpeed;
     private int sellIn;
     private int quality;
 
