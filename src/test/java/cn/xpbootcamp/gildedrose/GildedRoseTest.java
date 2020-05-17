@@ -13,11 +13,19 @@ public class GildedRoseTest {
     class OrdinaryProduct {
 
         @Test
-        void given_InSellIn_when_passDays_then_qualityGoDown1PerDay() {
+        void given_InSellIn_and_quality_gt_1_when_passDays_then_qualityGoDown1PerDay() {
             Product product = new Product(1,30,40);
             product.passDays(1);
             assertThat(product.getSellIn(), equalTo(29));
             assertThat(product.getQuality(), equalTo(39));
+        }
+
+        @Test
+        void given_InSellIn_and_quality_is_0_when_passDays_then_qualityIs0() {
+            Product product = new Product(1,30,0);
+            product.passDays(1);
+            assertThat(product.getSellIn(), equalTo(29));
+            assertThat(product.getQuality(), equalTo(0));
         }
 
         @Test

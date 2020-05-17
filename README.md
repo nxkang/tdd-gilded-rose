@@ -28,8 +28,9 @@
 	- 一旦过了演出日，价值就马上变成0
 
 1. Given 普通商品A,初始下滑速度为1/天，SellIn为30，价值为40,过了1天, When 计算价值, Then SellIn为29, 价值为39  
-1. Given 普通商品A,初始下滑速度为1/天，SellIn为30，价值为40,过了32天, When 计算价值, Then SellIn为-2, 价值为6  
-2. Given 普通商品A,初始下滑速度为1/天，SellIn为30，价值为40,过了200天, When 计算价值, Then SellIn为-170, 价值为0
+2. Given 普通商品A,初始下滑速度为1/天，SellIn为30，价值为0, 过了1天, When 计算价值, Then SellIn为29, 价值为0  
+3. Given 普通商品A,初始下滑速度为1/天，SellIn为0， 价值为40,过了1天, When 计算价值, Then SellIn为-1, 价值为38
+4. Given 普通商品A,初始下滑速度为1/天，SellIn为0， 价值为1, 过了1天, When 计算价值, Then SellIn为-1, 价值为0
 
 3. Given 陈年干酪，上涨速度为1/天， SellIn为30， 价值为40, 过了1天， When 计算价值， Then SellIn为29， 价值为41
 4. Given 陈年干酪，上涨速度为1/天， SellIn为30， 价值为40, 过了200天， When 计算价值， Then SellIn为-170， 价值为50
