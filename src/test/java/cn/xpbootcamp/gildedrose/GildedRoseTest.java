@@ -49,7 +49,7 @@ public class GildedRoseTest {
 
             // ge : great or equal
             @Test
-            void given_NotGeMaxQuality_when_passDays_then_qualityGoUp1PerDay() {
+            void given_InSellIn_and_quality_lt_50_when_passDays_then_qualityGoUp1PerDay() {
                 AgedBrie agedBrie = new AgedBrie(1, 30, 40);
                 agedBrie.passDays(1);
                 assertThat(agedBrie.getSellIn(), equalTo(29));
@@ -57,11 +57,19 @@ public class GildedRoseTest {
             }
 
             @Test
-            void given_EqualMaxQuality_when_passDays_then_qualityFixed() {
-                AgedBrie agedBrie = new AgedBrie(1, 30, 40);
-                agedBrie.passDays(200);
-                assertThat(agedBrie.getSellIn(), equalTo(-170));
+            void given_InSellIn_and_quality_eq_50_when_passDays_then_quality_eq_50() {
+                AgedBrie agedBrie = new AgedBrie(1, 30, 50);
+                agedBrie.passDays(1);
+                assertThat(agedBrie.getSellIn(), equalTo(29));
                 assertThat(agedBrie.getQuality(), equalTo(50));
+            }
+
+            @Test
+            void given_OverSellIn_and_quality_lt_50_when_passDays_then_qualityGoUp1PerDay() {
+                AgedBrie agedBrie = new AgedBrie(1, 0, 40);
+                agedBrie.passDays(1);
+                assertThat(agedBrie.getSellIn(), equalTo(-1));
+                assertThat(agedBrie.getQuality(), equalTo(41));
             }
         }
 
