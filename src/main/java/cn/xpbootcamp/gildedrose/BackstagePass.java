@@ -22,7 +22,11 @@ public class BackstagePass {
         return quality;
     }
 
-    public void passDays(int passDays) {
+    public void passOneDay() {
+        this.passDays(1);
+    }
+
+    private void passDays(int passDays) {
         for (int i = passDays; i > 0; i--) {
             this.sellIn -= 1;
             if (this.sellIn >= 10) {

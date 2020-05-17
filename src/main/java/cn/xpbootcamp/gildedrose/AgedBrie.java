@@ -12,7 +12,11 @@ public class AgedBrie {
         this.quality = quality;
     }
 
-    public void passDays(int passDays) {
+    public void passOneDay() {
+        this.passDays(1);
+    }
+
+    private void passDays(int passDays) {
         this.quality += qualityGoUpSpeed * passDays;
         if (quality >= 50) {
            this.quality = 50;

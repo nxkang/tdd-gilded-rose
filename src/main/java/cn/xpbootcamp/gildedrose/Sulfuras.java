@@ -12,7 +12,11 @@ public class Sulfuras {
         return quality;
     }
 
-    public void passDays(int passDays) {
+    public void passOneDay() {
+        this.passDays(1);
+    }
+
+    private void passDays(int passDays) {
         //do nothing
     }
 }
