@@ -2,6 +2,9 @@ package cn.xpbootcamp.gildedrose;
 
 public class BackstagePass {
 
+    private static final int MAX_QUALITY = 50;
+    private static final int MIN_QUALITY = 0;
+
     private final int initialQualityGoUpSpeed;
     private int sellIn;
     private int quality;
@@ -34,11 +37,11 @@ public class BackstagePass {
             } else if (this.sellIn >= 0) {
                 this.quality += 3 * this.initialQualityGoUpSpeed;
             } else {
-                this.quality = 0;
+                this.quality = MIN_QUALITY;
             }
         }
-        if (quality > 50) {
-            this.quality = 50;
+        if (quality > MAX_QUALITY) {
+            this.quality = MAX_QUALITY;
         }
     }
 }

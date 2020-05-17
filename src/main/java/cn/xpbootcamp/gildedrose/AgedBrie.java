@@ -2,6 +2,8 @@ package cn.xpbootcamp.gildedrose;
 
 public class AgedBrie {
 
+    private static final int MAX_QUALITY = 50;
+
     private final int qualityGoUpSpeed;
     private int sellIn;
     private int quality;
@@ -18,8 +20,8 @@ public class AgedBrie {
 
     private void passDays(int passDays) {
         this.quality += qualityGoUpSpeed * passDays;
-        if (quality >= 50) {
-           this.quality = 50;
+        if (quality >= MAX_QUALITY) {
+           this.quality = MAX_QUALITY;
         }
         this.sellIn -= passDays;
     }

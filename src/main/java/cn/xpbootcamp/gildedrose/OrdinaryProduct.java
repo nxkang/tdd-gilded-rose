@@ -2,6 +2,8 @@ package cn.xpbootcamp.gildedrose;
 
 public class OrdinaryProduct {
 
+    private static final int MIN_QUALITY = 0;
+
     private final int initialQualityGoDownSpeed;
     private int sellIn;
     private int quality;
@@ -28,8 +30,8 @@ public class OrdinaryProduct {
         this.quality -= initialQualityGoDownSpeed * this.sellIn;
         int overSellInDays = passDays - this.sellIn;
         this.quality -= initialQualityGoDownSpeed * 2 * overSellInDays;
-        if (this.quality < 0) {
-            this.quality = 0;
+        if (this.quality < MIN_QUALITY) {
+            this.quality = MIN_QUALITY;
         }
 
         this.sellIn -= passDays;
@@ -37,8 +39,8 @@ public class OrdinaryProduct {
 
     private void passDaysLtSellIn(int passDays) {
         this.quality -= initialQualityGoDownSpeed * passDays;
-        if (this.quality < 0) {
-            this.quality = 0;
+        if (this.quality < MIN_QUALITY) {
+            this.quality = MIN_QUALITY;
         }
         this.sellIn -= passDays;
     }
